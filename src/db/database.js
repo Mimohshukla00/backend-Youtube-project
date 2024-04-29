@@ -1,11 +1,13 @@
-import { DB_NAME } from "../constants";
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-const connectDB = async () => {
-  try {
-  } catch (error) {
-
-    console.log("MONGODB connection error",error)
-    process.exit(1)
-  }
+exports.connectDB = () => {
+  mongoose
+    .connect(process.env.MONGODB_URI)
+    .then(() => {
+      console.log("database connected");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
