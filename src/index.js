@@ -19,6 +19,6 @@ app.get("/", (req, res) => {
   // console.log(req.originalUrl)
   // console.log(req.params)
   // console.log(req.path)
-  console.log(req.xhr);
+  // console.log(req.xhr);
   res.send("hello world");
 });
